@@ -22,7 +22,7 @@
 //str.stratsWith('ex',8) true beradi
 // endsWith()
 // concat()
-const str = ' hello '
+//const str = ' hello '
 // const str2 = 'world'
 // const newEl = str1.concat(str2)
 // const newEls = str1.concat(' '. str2)
@@ -39,7 +39,35 @@ const str = ' hello '
  //str.toLocaleUpperCase()
 // str.toString() somehow = str.valueOf()
 // String.raw(strings, ...substitutions) 
+// indexOf("element") doim arrayda kelgan birinchi element indexini chaqiradi
+//lastIndexOf('element') bu oxirgi elementni indexini qaytaradi
+// const persons = [
+//     {
+//         name: "Frank",
+//         age: 16
+//     },
+//     {
+//         name: "Sam",
+//         age: 14
+//     },
+//     {
+//         name: "Bob",
+//         age: 20
+//     }
+// ]
 
+
+// function isAdult(person){
+//     return person.age >=16
+// }
+
+// const result = persons.every(isAdult)
+// console.log(result)
+// const names = ["florin", "ivan", "liam"]
+// const res = names.find(findIvan)
+// function findIvan(item){
+//     return item === 'ivan'
+// }
 
 
 
