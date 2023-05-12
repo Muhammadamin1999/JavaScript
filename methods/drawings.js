@@ -238,3 +238,13 @@
 //     }
 //     console.log(arr)
 // }
+// let n=5
+// for(let i=1; i<=n; i++){
+//     var arr = []
+//     for(let j=1; j<=i; j++){
+        
+//         let res = '0x00' + (45 - (i-j))
+//         arr+= String.fromCodePoint(res)
+//     }
+//     console.log(arr)
+// }
