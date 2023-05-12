@@ -115,16 +115,39 @@
 //     }
 //     console.log(arr2)
 // }
-let n=5
-for(let i=0; i< n; i++){
-    var arr=[]
-    for(let j=0; j<=i; j++){
-      arr += '*'
-    }
-let m = 5
-    for(let k= m-1; k > 0;k--)
-    {
-        arr+= '*'
-    }
-    console.log(arr)
+//let n=5
+// for(let i=0; i< n; i++){
+//     var arr=[]
+//     for(let j=0; j<=i; j++){
+//       arr += '*'
+//     }
+// let m = 5
+//     for(let k= m-1; k > 0;k--)
+//     {
+//         arr+= '*'
+//     }
+//     console.log(arr)
+// }
+// let n=5
+// for(let i =0; i< 2*n-1; i++){
+//     let stars = i
+//     var arr = []
+//     if(i > n) stars = 2*n - i
+//     for(let j=1; j<stars; j++){
+//         arr += '*'
+//     }
+//     console.log(arr)
+// }
+let n = 5
+let start = 1
+for(let i=0; i<n; i++){
+    var arr = []
+   if(i%2 === 0) start = 1
+   else start = 0
+   for(let j=0; j<=i; j++)
+   {
+      arr += start
+      start = 1-start
+   }
+   console.log(arr)
 }
