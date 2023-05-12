@@ -68,7 +68,22 @@
 // function findIvan(item){
 //     return item === 'ivan'
 // }
+const a = "this is string"
+console.log(typeof(a))
+const b = String("i am also string")
+console.log(typeof(b))
+const c = new String("hello")
+console.log(typeof(c))
 
-
+console.log(a.charAt(5))
+console.log(a.at(5))
+console.log(a.charCodeAt(5))
+console.log(a.codePointAt(5))
+console.log(a.concat(" ",b))
+const d = ["hello", " World", " this is ", " me "]
+console.log("".concat(...d))
+console.log(" muhammad amin js ")
+console.log(" muhammad amin js ".split(' '))
+const e = " muhammad amin js ".split(' ')
 
 
