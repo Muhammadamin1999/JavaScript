@@ -106,3 +106,33 @@
 //     }
 // }
 // console.log(num3)
+
+// armstroong number
+
+// let num = 153
+// let result = num.toString().split("").map(Number)
+// let final = result.reduce((accumlator, element)=>accumlator + Math.pow(element,result.length) )
+
+// console.log(final)
+// let num = 16
+// for(let i = 1; i<= num; i++){
+//     var arr = 0
+//     if(num % i === 0)
+//     {
+//        arr = i
+//        console.log(arr)
+//     }
+    
+// }
+let num = 16
+function isPrime(num)
+{
+for(let i=2; i<num; i++){
+    if(num % i === 0){
+        return false
+    }
+    else{
+        return true
+    }
+}}
+console.log(isPrime(num)) 
