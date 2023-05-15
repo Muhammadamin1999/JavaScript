@@ -97,3 +97,20 @@
 // }
 
 // console.log(isPalindrom(str))
+// let n =5
+// function recursiveprint(n){
+//     if(n>=1){
+//         console.log(n)
+//         recursiveprint(n-1)
+//     }
+// }
+
+// recursiveprint(n)
+// let n = 5
+// function sumOfn(n){
+//     if(n>0){
+//         return sumOfn(n-1) + n
+//     } return 0
+// }
+// const result = sumOfn(n)
+// console.log(result)
