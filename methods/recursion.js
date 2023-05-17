@@ -114,3 +114,29 @@
 // }
 // const result = sumOfn(n)
 // console.log(result)
+// function sum(arr){
+//     if(arr.length === 0) return 0
+
+//     const firstNum = arr[0]
+//     const remainingNum = arr.slice(1)
+//     return firstNum + sum(remainingNum)
+// }
+// const arr = [1,2,3,4,5]
+// const res = sum(arr) 
+// console.log(res)
+function addTwo(x) {
+    return x + 2;
+  }
+  
+  function multiplyByThree(x) {
+    return x * 3;
+  }
+  
+  function subtractTen(x) {
+    return x - 10;
+  }
+  
+  // Function composition
+  const composedFunction = subtractTen(multiplyByThree(addTwo(5)));
+  console.log(composedFunction); // Output: 19
+  
