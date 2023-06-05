@@ -45,3 +45,4 @@ let result = arr.map(value=>{
 })
 console.log(result)
 
+
