@@ -142,14 +142,155 @@
 // undefined false
 // qolgan hammasi to'g'ri
 
+// Coercion
+// let a = 16
+// console.log(`there are ${a + ""} students`)
+// console.log(typeof(a))
+// console.log('hello' + a)
+// console.log(typeof(a))
 
+//console.log( "0" == 0)
+// carefull == with 0 , ""," ", non-primative, true or false
+// USE == WHEN YOU KNOW THE TYPES YOU ARE COMPARING
+// USE === WHEN YOU DON'T KNOW TYPES
 
+// function declaration
+// function multipleByTwo(x){
+//     return x * 2
+// }
+// // function expression
 
+// var fun = multipleByTwo(x)
+// {
+//     return x * 2
+// }
+// //arrow function expression
 
+// var fun = (x)=>{
+//     return x * 2
+// }
 
+//var teacher = "Kyle"
 
+// function anotherTeacher(){
+//     var teacher = "Suzy"
+//     console.log(teacher)
+// }
+// (anotherTeacher)()
+// (function anotherTeacher(){
+//     var teacher = "Suzy"
+//     console.log(teacher)
+// })()
+//IIFE
+// (function(teacher){
+//     console.log(teacher)
+// })("Suzy")
+// console.log(teacher)
+//(function(){})()
 
+// hoisting
 
+// teacher()
+// otherTeacher()
 
+// function teacher(){
+//     return "Kyle"
+// }
 
+// var otherTeacher = function(){
+//     return "Suzy"
+//}
+// {
+//     teacher = "Kyle"
+//     let teacher
+// }
+// gave an error cannot access teacher before initialization
+
+// var teacher = "kyle"
+
+// {
+//     console.log(teacher)
+//     //let teacher = "Suzy"
+// }
+
+// function ask(question){
+//     setTimeout(function waitASec(){
+//         console.log(question)
+//     },100)
+// }
+// ask("what is closure")
+
+// var teacher = "Kyle"
+
+// var myteacher = function(){
+//     console.log(teacher)
+// }
+// teacher = "Suzy"
+
+// myteacher()
+
+// var workshop = (function Module(teacher){
+//     var publicAPI = {ask, }
+//     return publicAPI
+
+//     function ask(question){
+//         console.log(teacher,question)
+//     }
+// })("Kyle")
+
+// workshop.ask("It's a module, right?")
+
+// var teacher = "Kyle"
+
+// export default function ask(question){
+//     console.log(teacher,question)
+// }
+// import ask from "address of .js file"
+
+// module 1
+// export function great(name){
+//     console.log("Hello" + " my " + name )
+// }
+// export const message = "Welcome"
+// // module 2
+// import {great, message} from ".module1.js"
+// great("John")
+// console.log(message)
+
+// var workshop = {
+//     teacher: "Kyle",
+//     ask(question){
+//         console.log(this.teacher, question)
+//     }
+// }
+// workshop.ask(" what is impilict")
+
+//function ask(question){
+//     console.log(this.teacher, question)
+// }
+
+// var workshop1 = {
+//     teacher: "Kyle",
+//     ask: ask,
+// }
+// var workshop2 = {
+//     teacher: "Suzy",
+//     ask: ask,
+// }
+
+// workshop1.ask(" How do i share the method?")
+// workshop2.ask(" What is important")
+//explixit binding
+// function ask(question){
+//     console.log(this.teacher, question)
+// }
+
+// var workshop1 = {
+//     teacher: "Kyle"
+// }
+// var workshop2 = {
+//     teacher: "Suzy"
+// }
+// ask.call(workshop1, "Heelo")
+// ask.call(workshop2, "World")
 
