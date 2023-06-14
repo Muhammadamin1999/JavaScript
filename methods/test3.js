@@ -294,3 +294,112 @@
 // ask.call(workshop1, "Heelo")
 // ask.call(workshop2, "World")
 
+// class
+// class Workshop{
+//     constructor(teacher){
+//         this.teacher = teacher
+//     }
+//     ask(question){
+//         console.log(this.teacher, question)
+//     }
+// }
+// var teacher1 = new Workshop("Kyle")
+// var teacher2 = new Workshop("Suzy")
+
+// teacher1.ask("is 1 teacher")
+// teacher2.ask("is 2 teacher")
+
+// class Workshop{
+//     constructor(teacher){
+//         this.teacher = teacher
+//     }
+//     ask(question){
+//         console.log(this.teacher, question)
+//     }
+// }
+// class AnotherWorkshop extends Workshop{
+//     speakUp(msg){
+//         this.ask(msg)
+//     }
+// }
+
+// var teacher1 = new AnotherWorkshop("Kyle")
+// teacher1.speakUp("is 1 teacher")
+
+// super
+// class Superclass {
+//     constructor(name) {
+//       this.name = name;
+//     }
+//   }
+  
+//   class Subclass extends Superclass {
+//     constructor(name, age) {
+//       super(name); // Calls the constructor of the superclass with 'name'
+//       this.age = age;
+//     }
+  
+//     logDetails() {
+//       console.log(`Name: ${this.name}, Age: ${this.age}`); // Accesses the 'name' property of the superclass
+//     }
+//   }
+  
+//   const obj = new Subclass("John", 25);
+//   obj.logDetails();
+  // Output: Name: John, Age: 25
+// class Workshop{
+//     constructor(teacher){
+//         this.teacher = teacher
+//     }
+//     ask(question){
+//         console.log(this.teacher, question)
+//     }
+// }
+// class AnotherWorkshop extends Workshop{
+//     speakUp(msg){
+//         this.ask(msg)
+//     }
+// }
+
+// var teacher1 = new AnotherWorkshop("Kyle")
+
+// prototype
+// function Workshop(teacher){
+//     this.teacher = teacher
+// }
+// Workshop.prototype.ask = function(question){
+//     console.log(this.teacher, question)
+// }
+
+// var deepJS = new Workshop("Kyle")
+// var reactJS = new Workshop("Suzy")
+
+// deepJS.ask("Is 'prototype' a class?")
+// reactJS.ask("is it ugly?")
+
+// function Workshop(teacher){
+//     this.teacher = teacher
+// }
+// Workshop.prototype.ask = function(question){
+//     console.log(this.teacher, question)
+// }
+// var deepJS = new Workshop("Kyle")
+// deepJS.constructor === Workshop
+
+// deepJS.__proto__ === Workshop.prototype
+// Object.getPrototypeOf(deepJS) === Workshop.prototype
+
+// function Workshop(teacher){
+//     this.teacher = teacher
+// }
+// Workshop.prototype.ask = function(question){
+//     console.log(this.teacher, question)
+// }
+// var deepJS = new Workshop("Kyle")
+
+// deepJS.ask = function(question){
+//     this__proto__ask.call(this.question.toUpperCase())
+// }
+// deepJS.ask("ts this fake polymorphism")
+
+
