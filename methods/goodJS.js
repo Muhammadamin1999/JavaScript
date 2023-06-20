@@ -157,3 +157,30 @@
 // }
 
 // if we want to show both we use entries
+
+// obj
+// let superman = {
+//     name: Clark,
+//     surname: Kent
+// }
+
+// let spiderman = new Object()
+
+// superman.name // using dot notation
+// super['name'] // via []
+
+// in can be used to check if the obj has particular property
+//'city' in superman result false
+// or we use hasOwnProperty()
+// for iterate over obj use for of and then Object.values() it shows only values
+// for value of Object.entries() shows both value and property
+
+// json
+// string olib obj qilib qaytarib beradi
+// const batman = {name: hello,
+//  surname : world
+// }
+// JSON.parse(batman) // pase JSON datani string qiladi
+
+//stringfy() string data ni JSON qiladi
+ 
