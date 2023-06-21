@@ -1,0 +1,536 @@
+1.1
+To determine if S is a stable matching, we need to check if there are any unstable pairs in S. An unstable pair in the Gale-Shapley algorithm is a pair (m, w) where both m and w prefer each other over their current partners in S.
+
+Let's assume that S is not a stable matching, and there exists an unstable pair (m, w) in S. It means that both m and w prefer each other over their current partners in S.
+
+If m prefers w over his current partner, it implies that w is not his first choice in the preference list. However, in the definition of S, we assume that m is the first on the preference list of w. This contradicts our assumption, and therefore, m cannot prefer w over his current partner.
+
+Similarly, if w prefers m over her current partner, it implies that m is not her first choice in the preference list. However, in the definition of S, we assume that w is the first on the preference list of m. This contradicts our assumption, and therefore, w cannot prefer m over her current partner.
+
+Since we arrived at contradictions in both cases, it means that our initial assumption of S having an unstable pair is incorrect. Therefore, S is a stable matching, as there are no unstable pairs in it.
+
+Hence, the Gale-Shapley algorithm guarantees that the matching S will always be stable.
+1.2
+Yes, a stable matching always exists when given sets M and W with an equal number of members and preference lists defined. This result is guaranteed by the Gale-Shapley algorithm.
+
+The Gale-Shapley algorithm iteratively constructs a matching between the members of set M and set W, ensuring stability at every step. The algorithm guarantees that it will terminate and produce a stable matching regardless of the initial preferences.
+
+To understand why a stable matching always exists, let's consider the algorithm's behavior. The algorithm starts with each man proposing to his top-choice woman. Then, women evaluate their proposals and either accept or reject them based on their own preferences. If a woman rejects a proposal from a man, she may later receive a proposal from a man she prefers more.
+
+The algorithm continues until all men and women are matched. At each step, if a woman accepts a proposal, it means that she prefers the proposing man over her current partner (if she has one) and that the proposing man prefers her over his current partner (if he has one). This ensures that the matching remains stable.
+
+If there were no stable matching possible, it would mean that there exists an unstable pair where both the man and woman prefer each other over their current partners. However, the Gale-Shapley algorithm guarantees that every man and woman eventually end up with their best available partner, and no unstable pairs are formed.
+
+Therefore, given the conditions of equal-sized sets M and W and preference lists, a stable matching always exists according to the Gale-Shapley algorithm.
+1.3
+The set S returned by the Gale-Shapley algorithm is the set of pairs (m, w) where m is the first choice on the preference list of woman w, and w is the first choice on the preference list of man m. In other words, S represents the initial proposals and acceptances that occur during the execution of the algorithm.
+
+S is indeed a stable matching. The Gale-Shapley algorithm guarantees that the matching it produces is stable. Stability means that there are no unstable pairs, where both the man and woman prefer each other over their current partners.
+
+In terms of the worst valid partner for a woman and the best valid partner for a man, the Gale-Shapley algorithm ensures that a woman gets the best partner she can possibly obtain among all stable matchings, while a man gets the worst partner he can possibly obtain among all stable matchings.
+
+To understand this, let's consider the behavior of the algorithm. The algorithm starts with each man proposing to his top-choice woman, and women consider proposals from their preferred men. As the algorithm progresses, women may receive proposals from men they prefer more, and they can reject proposals from men they prefer less.
+
+Since the algorithm operates in a way that men propose and women choose, it ensures that a woman always has the opportunity to trade up to a better partner if such an option becomes available. Therefore, the woman's partner in the matching S will be the best possible partner she can obtain among all stable matchings.
+
+On the other hand, since men propose to women and can be rejected, a man's partner in the matching S will be the worst possible partner he can obtain among all stable matchings. If there was a better partner available for a man, the woman he prefers would have accepted his proposal instead.
+
+Hence, the Gale-Shapley algorithm produces a stable matching (S) that ensures women receive their best valid partners and men receive their worst valid partners among all stable matchings.
+1.4
+The Gale-Shapley algorithm, also known as the stable matching algorithm, has a time complexity of O(n^2), where n is the number of participants (men and women) in the matching problem.
+
+Here's a justification for this time complexity:
+
+1. Initialization: The initialization step involves assigning each participant their initial preference list, which can be done in O(n) time.
+
+2. While loop: The core of the algorithm consists of a while loop that iterates until all participants are matched. In the worst case, each participant may have to propose to every other participant, resulting in n iterations of the while loop.
+
+3. Preference list access: In each iteration of the while loop, a participant proposes to their preferred participant from their preference list. To find the preferred participant, the algorithm needs to access the preference list of the proposing participant, which takes O(n) time since the preference list can contain up to n elements.
+
+4. Proposals and rejections: For each proposal, the algorithm needs to check if the proposed participant is currently unmatched or if they prefer the new proposer over their current partner. This requires comparing the preferences of the proposed participant, which can be done in O(n) time.
+
+5. Partner reassignment: If a proposed participant rejects their current partner in favor of the new proposer, the algorithm needs to reassign partners. This step requires updating the partner assignments and tracking the matched and unmatched participants.
+
+6. Termination: The algorithm terminates when all participants are matched. Checking for termination requires checking the status of each participant, which can be done in O(n) time.
+
+Overall, considering the number of iterations in the while loop, the preference list accesses, proposal and rejection comparisons, partner reassignments, and termination checks, the time complexity of the Gale-Shapley algorithm is O(n^2).
+
+It's worth noting that the algorithm can be optimized to run in O(n^2) time complexity using data structures such as arrays or dictionaries to store and access preference lists efficiently.
+1.5
+To show that S is not a stable matching, we need to find a pair (m', w') where both m' and w' prefer each other over their current partners in S.
+
+Given the information that m is the first on the list of w and w is the first on the list of m, it implies that w prefers m over her current partner in S, and m prefers w over his current partner in S.
+
+Let's assume m's current partner in S is w', and w's current partner in S is m'. Since (m, w) ∉ S, it means that m is matched with someone else in S, and w is matched with someone else in S as well.
+
+Now, let's consider the pair (m', w'). We need to show that m' prefers w' over his current partner, and w' prefers m' over her current partner.
+
+Since m is the first on the list of w, it implies that w strictly prefers m over any other partner. Therefore, w' (m's current partner) is ranked lower than m on w's preference list.
+
+Similarly, since w is the first on the list of m, it implies that m strictly prefers w over any other partner. Therefore, m' (w's current partner) is ranked lower than w on m's preference list.
+
+Since both m' and w' prefer each other over their current partners, it contradicts the stability of S as defined by the stable matching algorithm. Therefore, S is not a stable matching.
+
+============================ 2==========================================
+
+2.1
+(a) In graph theory, a connected component in a graph refers to a subgraph where every vertex is connected to at least one other vertex within that subgraph. In simpler terms, it represents a group of vertices that are mutually reachable from each other through a path of edges.
+
+(b) To prove that two different connected components are disjoint, we need to show that they do not share any vertices. Suppose we have two connected components, CC1 and CC2. 
+
+Assume, for contradiction, that there exists a vertex v that is present in both CC1 and CC2. Since CC1 is a connected component, there must be a path from v to any other vertex in CC1. Similarly, CC2 being a connected component, there must be a path from v to any other vertex in CC2.
+
+Combining these paths, we obtain a path from any vertex in CC1 to any vertex in CC2, which contradicts the assumption that CC1 and CC2 are different connected components. Therefore, two different connected components are disjoint and do not share any vertices.
+
+(c) One commonly used algorithm to compute all connected components in a graph is the Depth-First Search (DFS) algorithm. The steps to compute all connected components using DFS are as follows:
+
+1. Initialize an empty list to store the connected components.
+2. Initialize a set or array to keep track of visited vertices.
+3. For each vertex v in the graph:
+     a. If v is not visited, perform a DFS traversal from v.
+     b. During the DFS traversal, mark all visited vertices and add them to a temporary list.
+     c. Once the DFS traversal from v is complete, add the temporary list to the list of connected components.
+4. Repeat steps 3a-3c until all vertices are visited.
+
+The DFS algorithm explores a graph by traversing as far as possible along each branch before backtracking. By performing DFS from each unvisited vertex, we can identify all the connected components in the graph.
+
+The time complexity of the DFS-based algorithm for computing all connected components is O(V + E), where V is the number of vertices and E is the number of edges in the graph. This is because each vertex and each edge is visited at most once during the DFS traversal.
+2.2
+In graph theory, a tree is an undirected graph that is acyclic, connected, and has no cycles or loops. It is a fundamental data structure that resembles a hierarchical structure with a single root node and multiple child nodes.
+
+Formally, a tree is defined as a connected graph G that satisfies the following properties:
+
+1. Acyclic: There are no cycles in the graph. This means that there is no path that starts and ends at the same vertex, and no vertex can be visited more than once when traversing the edges.
+
+2. Connected: There is a path between any two vertices in the graph. This implies that every vertex is reachable from any other vertex through a sequence of edges.
+
+3. No loops: There are no self-loops in the graph, meaning that no vertex has an edge connecting it to itself.
+
+4. Unique path: There is exactly one path between any pair of vertices. This property ensures that the tree structure is deterministic and unambiguous.
+
+5. Rooted: A tree has a designated root node from which all other nodes are accessible. The root node has no incoming edges, but it may have multiple outgoing edges connecting to its child nodes.
+
+Overall, a tree is a connected, acyclic, and undirected graph with a unique path between any two vertices, and it is rooted at a specific node. Trees are commonly used in various algorithms, data structures, and applications due to their hierarchical nature and well-defined properties.
+
+A tree with n nodes has (n-1) edges. 
+
+To prove this, we can use induction on the number of nodes, n.
+
+Base case: When n = 1, there is only one node, and no edges are present. So, (n-1) = (1-1) = 0, which is true.
+
+Inductive step: Assume that a tree with k nodes has (k-1) edges, where k ≥ 1.
+
+Now, let's consider a tree with (k+1) nodes. We add one more node to the existing tree, connecting it to one of the existing nodes. By connecting the new node to an existing node, we introduce one additional edge.
+
+The new node has exactly one connection (edge) to an existing node in the tree. This new node, along with its connection, forms a subtree within the larger tree.
+
+Thus, by adding one node, we also add one edge, resulting in a total of (k+1) nodes and k edges.
+
+Therefore, by induction, we can conclude that a tree with n nodes has (n-1) edges.
+
+2.3
+(a) A strongly connected component in a directed graph is a subgraph where every vertex is reachable from every other vertex within that subgraph. In other words, for any pair of vertices u and v in a strongly connected component, there exists a directed path from u to v and a directed path from v to u.
+
+(b) To prove that two different strongly connected components in a directed graph are disjoint, we need to show that they do not share any vertices. Suppose we have two strongly connected components, SCC1 and SCC2.
+
+Assume, for contradiction, that there exists a vertex v that is present in both SCC1 and SCC2. Since SCC1 is strongly connected, there must be a directed path from v to any other vertex in SCC1. Similarly, SCC2 being strongly connected, there must be a directed path from v to any other vertex in SCC2.
+
+Combining these paths, we obtain a directed path from any vertex in SCC1 to any vertex in SCC2 and vice versa, which contradicts the assumption that SCC1 and SCC2 are different strongly connected components. Therefore, two different strongly connected components are disjoint and do not share any vertices.
+
+(c) One commonly used algorithm to compute all strongly connected components in a directed graph is Tarjan's algorithm. The pseudocode for Tarjan's algorithm is as follows:
+
+```
+function TarjanAlgorithm(graph):
+    initialize an empty stack S
+    create an empty list to store the strongly connected components
+
+    for each vertex v in the graph:
+        if v has not been visited, perform Tarjan's DFS on v
+
+    return the list of strongly connected components
+
+function TarjanDFS(vertex v):
+    assign a unique index number (ID) to v
+    assign a low-link value to v equal to the ID
+    push v onto the stack S
+    mark v as visited
+
+    for each neighbor w of v:
+        if w has not been visited, perform Tarjan's DFS on w
+        update the low-link value of v based on the low-link value of w if w is on the stack
+
+    if v's low-link value is equal to its ID:
+        create a new empty strongly connected component SCC
+        pop vertices from the stack until reaching v and add them to SCC
+        add SCC to the list of strongly connected components
+
+```
+
+Tarjan's algorithm utilizes a depth-first search (DFS) traversal to visit each vertex in the graph and assigns unique index numbers and low-link values to each vertex. The low-link value represents the smallest index reachable from the current vertex in the DFS traversal.
+
+By maintaining a stack of visited vertices and comparing low-link values, the algorithm identifies strongly connected components. When a vertex's low-link value is equal to its assigned index number, it indicates the start of a new strongly connected component. The algorithm then pops vertices from the stack until reaching the starting vertex and adds them to the current strongly connected component.
+
+After performing Tarjan's DFS on all unvisited vertices, the algorithm returns the list of strongly connected components computed.
+
+The time complexity of Tarjan's algorithm is O(V + E), where V is the number of vertices and E is the number of edges in the directed graph.
+
+2.4 
+A bipartite graph is an undirected graph whose vertex set can be divided into two disjoint sets such that every edge in the graph connects a vertex from one set to a vertex from the other set. In simpler terms, a bipartite graph can be colored using only two colors, such that no two adjacent vertices have the same color.
+
+Formally, a graph G = (V, E) is bipartite if and only if its vertex set V can be partitioned into two subsets V1 and V2 such that every edge in E connects a vertex from V1 to a vertex from V2.
+
+To decide if a graph is bipartite, one commonly used algorithm is the Bipartite Graph Check algorithm based on graph coloring. This algorithm checks if a graph can be properly colored with two colors, ensuring that adjacent vertices have different colors. If a proper coloring is possible, the graph is bipartite; otherwise, it is not.
+
+The pseudocode for the Bipartite Graph Check algorithm is as follows:
+
+```
+function isBipartite(graph):
+    initialize an empty dictionary to store vertex colors
+    initialize an empty queue Q
+
+    for each vertex v in the graph:
+        if v is not colored, perform BFS from v
+
+    return true if the graph is bipartite, false otherwise
+
+function BFS(vertex start):
+    assign start the color 1 and add it to the queue Q
+
+    while Q is not empty:
+        dequeue a vertex u from Q
+        for each neighbor v of u:
+            if v is not colored:
+                assign v a color different from u and add it to the queue Q
+            else if v has the same color as u:
+                return false (the graph is not bipartite)
+
+    return true (the graph is bipartite)
+```
+
+The algorithm starts by initializing an empty dictionary to store the colors of the vertices and an empty queue. Then, for each vertex in the graph, if it is not colored, the algorithm performs a breadth-first search (BFS) from that vertex.
+
+During the BFS traversal, vertices are colored with different colors from their parent vertices. If a vertex is already colored and has the same color as its parent, it means the graph is not bipartite, and the algorithm returns false. Otherwise, the algorithm continues the BFS traversal.
+
+If the BFS traversal completes without any conflicts, the graph is bipartite, and the algorithm returns true.
+
+The time complexity of the Bipartite Graph Check algorithm is O(V + E), where V is the number of vertices and E is the number of edges in the graph. This is because each vertex and each edge is visited at most once during the BFS traversal.
+
+2.5
+To discover if a graph contains a cycle, one commonly used algorithm is Depth-First Search (DFS). The idea behind using DFS to detect cycles is to maintain a visited set to track the visited vertices during the traversal and to keep track of the parent vertex that leads to the current vertex.
+
+Here's an outline of the algorithm to detect cycles using DFS:
+
+1. Initialize an empty visited set to keep track of visited vertices.
+2. For each vertex v in the graph:
+   a. If v is not visited, perform a DFS traversal from v.
+   b. During the DFS traversal, mark v as visited and recursively explore its adjacent vertices.
+   c. If an adjacent vertex u is visited and u is not the parent of the current vertex (indicating a back edge), then a cycle exists in the graph.
+
+Justification:
+The DFS algorithm can detect cycles in a graph because it explores all possible paths starting from each vertex. During the traversal, when it encounters an already visited vertex that is not the parent, it indicates the presence of a cycle.
+
+Here's why the algorithm works:
+1. Initially, all vertices are marked as unvisited.
+2. During the DFS traversal, if a vertex is visited, it means that it has been encountered before. If the visited vertex is not the parent of the current vertex, it implies the existence of a back edge, which forms a cycle.
+3. If no back edges are encountered during the DFS traversal, the algorithm will exhaustively explore all paths starting from each vertex, and the graph will be cycle-free.
+
+The time complexity of this algorithm is O(V + E), where V is the number of vertices and E is the number of edges in the graph. This is because each vertex and each edge is visited at most once during the DFS traversal.
+
+===================================== 3 =============================
+
+Here's the pseudocode for a recursive procedure, `Find-path`, that prints out the shortest path `Pv` from a given source node `s` to a target node `v` in a directed graph `G` with `d(v)` computed for each node:
+
+```
+procedure Find-path(G, s, v):
+    if v = s:
+        print v
+    else if d(v) = infinity:
+        print "No path exists from", s, "to", v
+    else:
+        Find-path(G, s, previous(v))  // Recursive call
+        print v
+```
+
+Explanation:
+- The procedure `Find-path` takes the directed graph `G`, the source node `s`, and the target node `v` as inputs.
+- It checks three conditions to determine the appropriate action for the current node `v`:
+  - If `v` is the same as the source node `s`, it means we have reached the starting point of the path. In this case, we simply print the node `v`.
+  - If `d(v)` is infinity, it means there is no path from `s` to `v`. In this case, we print a message indicating that no path exists.
+  - If neither of the above conditions is met, we recursively call the `Find-path` procedure with the source node `s` and the previous node on the shortest path to `v` (accessed through the `previous(v)` function).
+    - This recursive call ensures that the path is printed in the correct order from `s` to `v`.
+    - After the recursive call, we print the current node `v`.
+
+Note: The `previous(v)` function retrieves the previous node on the shortest path to `v` based on the computed `d(v)` values. It can be implemented as a function or as part of the graph data structure depending on the specific implementation details.
+
+By recursively traversing the path from `s` to `v` using the `previous(v)` function, the `Find-path` procedure prints out the shortest path `Pv` in the correct order from `s` to `v`.
+
+3.2
+(a) In Dijkstra's algorithm, a "shortest path" refers to the path with the minimum total weight or distance between a source node and a destination node in a graph. The length of a path in this algorithm is defined as the sum of the weights of the edges along the path. Each edge in the graph has an associated weight or cost, and the algorithm aims to find the path with the minimum total weight.
+
+(b) In general, the shortest path is defined as the path with the minimum total cost or distance between two nodes in a graph. The length of a path is typically defined as the sum of the weights or distances of the edges or vertices along the path, depending on the context. The concept of the shortest path can vary depending on the specific problem and the representation of the graph (weighted or unweighted, directed or undirected).
+
+(c) If the graph is not directed and there are no labels on the edges (unweighted graph), a common algorithm used to compute the shortest paths is Breadth-First Search (BFS). BFS explores the graph in a breadth-first manner, level by level, starting from a given source node. It calculates the shortest path from the source node to all other nodes in the graph.
+
+In an unweighted graph, where all edges have the same weight, BFS ensures that the first time a node is reached during the traversal, the path from the source to that node is the shortest path. This property of BFS makes it suitable for finding shortest paths in unweighted graphs.
+
+The pseudocode for computing shortest paths using BFS in an unweighted, undirected graph is as follows:
+
+```
+procedure BFS-Shortest-Paths(graph, source):
+    create an empty queue Q
+    enqueue the source node into Q
+    create an empty visited set
+    add the source node to the visited set
+    create an empty distance dictionary
+    set the distance of the source node to 0
+
+    while Q is not empty:
+        dequeue a node v from Q
+        for each neighbor u of v:
+            if u is not in the visited set:
+                add u to the visited set
+                enqueue u into Q
+                set the distance of u to the distance of v + 1
+
+    return the distance dictionary
+```
+
+The BFS-Shortest-Paths algorithm performs a BFS traversal of the graph starting from the source node. It maintains a visited set to keep track of visited nodes and a distance dictionary to store the shortest distances from the source node to each visited node. By incrementing the distance by 1 for each level in the BFS traversal, it ensures that the distance values represent the shortest paths from the source node to each visited node.
+
+The time complexity of BFS in an unweighted graph is O(V + E), where V is the number of vertices and E is the number of edges in the graph.
+
+======================================== 4 ===================================
+
+4.1
+The statement is true: An edge e = (u, v) does not belong to a minimum spanning tree (MST) of a directed graph G if and only if v and w can be joined by a path consisting entirely of edges that are cheaper than e.
+
+Justification:
+Let's consider the two cases:
+
+1. If an edge e = (u, v) does not belong to the MST:
+   In this case, there exists an alternative path between vertices v and w that does not include edge e. This path may consist of multiple edges, and since edge e is not part of the MST, the total cost of the alternative path must be less than the cost of e.
+
+2. If v and w can be joined by a path consisting entirely of cheaper edges:
+   If there exists a path between v and w that consists entirely of edges cheaper than e, it means that this alternative path has a lower total cost than the path that includes edge e. In an MST, all edges are chosen to minimize the total cost, so if there is a cheaper path between v and w, edge e cannot be part of the MST.
+
+Algorithm to decide if a given edge belongs to a minimum spanning tree:
+To determine if a given edge e = (u, v) belongs to the MST of a directed graph G, we can use the following algorithm:
+
+1. Run any algorithm to compute the MST of G, such as Prim's algorithm or Kruskal's algorithm.
+2. If the MST does not contain edge e, output that e does not belong to the MST and terminate.
+3. Otherwise, remove edge e from the graph G.
+4. Re-run the algorithm to compute the MST without edge e.
+5. If the new MST has the same total cost as the original MST, output that e belongs to the MST; otherwise, output that e does not belong to the MST.
+
+This algorithm works by comparing the total cost of the MST with and without the given edge e. If removing e results in a change in the total cost, it means that e is necessary for achieving the minimum cost, and therefore, it belongs to the MST. If the total cost remains the same, it indicates that e is not essential for the minimum cost, and thus, it does not belong to the MST.
+
+The time complexity of this algorithm depends on the underlying MST algorithm used, which is typically O(V^2) or O(E log V) for Prim's or Kruskal's algorithm, respectively.
+
+4.2
+The Cycle Property in the Minimum Spanning Tree (MST) problem states:
+
+"Let G = (V, E) be an undirected graph with distinct edge costs. A subset of edges F ⊆ E is part of an MST if and only if, for every subset of vertices S ⊆ V, the cheapest edge (u, v) that crosses the cut (S, V - S) is in F."
+
+Counterexample to the Cycle Property when edge costs are not distinct:
+If the assumption of distinct edge costs is not satisfied, the Cycle Property may not hold. Consider the following counterexample:
+
+```
+     1
+  A ---- B
+  |      |
+4 |      | 2
+  |      |
+  C ---- D
+     3
+```
+
+In this example, assume that the edge costs are not distinct, and the edge weights are as shown. Without the assumption of distinct edge costs, the Cycle Property would imply that the minimum spanning tree contains the edges (A, B), (B, D), and (D, C), forming a triangle. However, the minimum spanning tree is actually the path (A, B, D, C) with a total weight of 7.
+
+Modifying the property to hold without the assumption:
+To modify the property so that it holds even when the assumption of distinct edge costs is not satisfied, we can modify the definition as follows:
+
+"Let G = (V, E) be an undirected graph. A subset of edges F ⊆ E is part of an MST if and only if, for every subset of vertices S ⊆ V, the cheapest edge (u, v) that crosses the cut (S, V - S) and is not part of any cycle in F is in F."
+
+By considering the cheapest edge that crosses the cut and is not part of any cycle in F, we ensure that we select edges that are essential for connecting different components of the graph while avoiding the inclusion of redundant edges. This modified property guarantees that the subset of edges F forms a minimum spanning tree, regardless of whether the edge costs are distinct or not.
+
+With this modification, we can maintain the fundamental property of an MST while accounting for the possibility of non-distinct edge costs, ensuring that the resulting tree has the minimum possible weight.
+
+4.3
+
+Dijkstra's Algorithm and Prim's Algorithm are both well-known graph algorithms, but they serve different purposes and have different applications. Here are the differences and similarities between the two algorithms:
+
+Differences:
+1. Problem they solve:
+   - Dijkstra's Algorithm: Dijkstra's Algorithm solves the Single-Source Shortest Path problem, finding the shortest path from a single source vertex to all other vertices in a graph with non-negative edge weights.
+   - Prim's Algorithm: Prim's Algorithm solves the Minimum Spanning Tree (MST) problem, finding the minimum-weight tree that connects all vertices in an undirected graph.
+
+2. Graph types:
+   - Dijkstra's Algorithm: Dijkstra's Algorithm can be used for both directed and undirected graphs with non-negative edge weights.
+   - Prim's Algorithm: Prim's Algorithm is specifically designed for undirected graphs.
+
+3. Data structures used:
+   - Dijkstra's Algorithm: Dijkstra's Algorithm typically uses a priority queue (e.g., min-heap) to efficiently select the next vertex with the minimum distance during the traversal. It also requires a data structure to keep track of the shortest distances from the source to each vertex (e.g., an array or a dictionary).
+   - Prim's Algorithm: Prim's Algorithm commonly uses a priority queue to select the next vertex with the minimum edge weight during the construction of the MST. It also requires a data structure to keep track of the visited vertices and the edges that form the MST (e.g., an array or a heap).
+
+Similarities:
+1. Greedy approach: Both algorithms follow a greedy approach in their respective problem domains. They make locally optimal choices at each step to gradually build the solution until it becomes globally optimal.
+
+2. Exploration of neighbors: Both algorithms explore the neighboring vertices of the current vertex and update their respective data structures accordingly.
+
+3. Use of relaxation: Both algorithms use relaxation techniques to update the shortest distance (Dijkstra's Algorithm) or the key value (Prim's Algorithm) of each vertex during the traversal.
+
+4. Complexity: Both Dijkstra's Algorithm and Prim's Algorithm have similar time complexities. They both have a time complexity of O((V + E) log V), where V is the number of vertices and E is the number of edges in the graph.
+
+In summary, Dijkstra's Algorithm and Prim's Algorithm differ in the problems they solve, the types of graphs they work with, and the specific data structures used. However, they share similarities in their greedy approach, exploration of neighbors, relaxation techniques, and time complexity.
+
+4.4
+
+To prove that a connected graph G with distinct edge costs has a unique minimum spanning tree (MST), we need to show two things: (1) There exists at least one MST for G, and (2) Any two MSTs of G are identical.
+
+1. Existence of at least one MST:
+Since G is a connected graph, we know that it has at least one spanning tree. To prove that there exists at least one MST, we can use a proof by contradiction. Assume that G does not have an MST. This means that every spanning tree of G has a higher total weight than the minimum spanning tree. However, since the edge costs in G are distinct, there must be an edge with the lowest weight among all the edges in G. Adding this edge to any spanning tree of G will result in a spanning tree with a lower total weight, contradicting the assumption. Therefore, G must have at least one MST.
+
+2. Uniqueness of the MST:
+Now, let's assume that G has two different MSTs, T1 and T2. We will show that T1 and T2 are identical by proving that the sets of edges in T1 and T2 are the same.
+
+Since T1 and T2 are different MSTs, there must exist at least one edge, let's call it e, that is present in one MST but not in the other. Without loss of generality, let's assume that e is in T1 but not in T2.
+
+Removing e from T1 creates two disconnected components, A and B, in T1. Since T1 is a spanning tree, there must be an edge, let's call it f, that connects A and B in T1. Since T2 is also a spanning tree, it must contain a path that connects A and B. Let's assume this path in T2 is formed by the edges e1, e2, ..., en.
+
+Now, consider the graph G' obtained by removing the edge f from T1 and adding the edges e1, e2, ..., en. G' is still connected because there is a path from any vertex in A to any vertex in B through the edges e1, e2, ..., en. Furthermore, the total weight of the edges in G' is less than the total weight of the edges in T1 since e has a lower weight than f.
+
+However, this contradicts the fact that T1 is an MST. The contradiction arises because we assumed that T1 and T2 are different MSTs, but we have shown that T1 can be transformed into a spanning tree with a lower total weight (G').
+
+Therefore, the assumption that G has two different MSTs must be false. This implies that G has a unique minimum spanning tree.
+
+In conclusion, a connected graph G with distinct edge costs has a unique minimum spanning tree (MST).
+
+============================ 5 =================================
+
+5.1
+(a) Shannon-Fano code:
+
+To compute the Shannon-Fano code for the given frequencies, follow these steps:
+
+1. Sort the letters in descending order based on their frequencies:
+
+   fg (0.23) -> fe (0.18) -> fb (0.14) -> fc (0.12) -> fh (0.12) -> ff (0.1) -> fd (0.08) -> fa (0.03)
+
+2. Split the sorted letters into two groups, trying to make the sum of frequencies in each group as close as possible:
+
+   Group 1: fg (0.23) -> fe (0.18) -> fb (0.14) -> fc (0.12) -> fh (0.12)
+   Group 2: ff (0.1) -> fd (0.08) -> fa (0.03)
+
+3. Assign a '0' to the letters in Group 1 and a '1' to the letters in Group 2.
+
+   Group 1: fg (0.23) -> fe (0.18) -> fb (0.14) -> fc (0.12) -> fh (0.12)
+                  0            10           110          1110         1111
+   Group 2: ff (0.1) -> fd (0.08) -> fa (0.03)
+                  111            1100         1101
+
+The Shannon-Fano codes for the given letters are as follows:
+
+   a -> 1101
+   b -> 110
+   c -> 1110
+   d -> 1100
+   e -> 10
+   f -> 111
+   g -> 0
+   h -> 1111
+
+(b) Huffman code:
+
+To compute the Huffman code for the given frequencies, follow these steps:
+
+1. Create a leaf node for each letter with its respective frequency.
+
+   Leaf nodes: fa (0.03), fb (0.14), fc (0.12), fd (0.08), fe (0.18), ff (0.1), fg (0.23), fh (0.12)
+
+2. Create a priority queue (min-heap) and insert all the leaf nodes into it.
+
+   Priority Queue: fa (0.03), fd (0.08), ff (0.1), fc (0.12), fh (0.12), fb (0.14), fe (0.18), fg (0.23)
+
+3. Repeat the following steps until only one node remains in the priority queue:
+   - Remove the two nodes with the lowest frequencies from the priority queue.
+   - Create a new internal node with these two nodes as children and a frequency equal to the sum of their frequencies.
+   - Insert the new internal node back into the priority queue.
+
+4. The remaining node in the priority queue is the root of the Huffman tree.
+
+   Huffman Tree:
+                      Root
+                     /    \
+                fg (0.23)  Internal Node (0.77)
+                               /        \
+                           fe (0.18)   Internal Node (0.59)
+                                          /          \
+                                     fb (0.14)     Internal Node (0.45)
+                                                      /          \
+                                                 fh (0.12)    Internal Node (0.33)
+                                                                   /         \
+                                                              ff (0.1)    Internal Node (0.23)
+                                                                               /         \
+                                                                          fc (0.12)    fd (0.08)
+5. Assign a '0' to the left branch and a '1' to the right branch at each node of the Huffman tree.
+
+   Huffman Codes:
+   a -> 111100
+============================= 6 ========================================
+6.1
+Here's a pseudocode for a recursive version of the Knapsack problem algorithm:
+
+```
+function knapsackRecursive(weights, values, capacity, n):
+    if capacity <= 0 or n == 0:
+        return 0
+    
+    if weights[n-1] > capacity:
+        return knapsackRecursive(weights, values, capacity, n-1)
+    
+    return max(values[n-1] + knapsackRecursive(weights, values, capacity - weights[n-1], n-1),
+               knapsackRecursive(weights, values, capacity, n-1))
+```
+
+In this recursive algorithm, `weights` is an array containing the weights of items, `values` is an array containing the values of items, `capacity` represents the maximum weight capacity of the knapsack, and `n` is the total number of items.
+
+The base cases are when the capacity becomes non-positive or when there are no items left (`n == 0`), in which case the function returns 0.
+
+If the weight of the current item (`weights[n-1]`) is greater than the remaining capacity, we cannot include it in the knapsack, so we recursively call the function with the next item (`n-1`).
+
+Otherwise, we have two options: either include the current item by subtracting its weight from the remaining capacity and adding its value, or exclude the current item and move on to the next item. We choose the option that gives us the maximum value and return that as the result.
+
+It's important to note that this recursive algorithm has an exponential time complexity due to overlapping subproblems. To improve the efficiency of solving the Knapsack problem, dynamic programming approaches like the bottom-up approach (using a table to store and reuse calculated values) are preferred.
+
+6.2
+
+Here's a procedure that uses the table M, along with the set of items with their weights and values, to compute the solution that maximizes the weight for the Knapsack problem:
+
+```python
+def computeKnapsackSolution(M, weights, values, capacity):
+    n = len(weights)
+    knapsackSolution = []
+    w = capacity
+
+    for i in range(n, 0, -1):
+        if M[i][w] != M[i-1][w]:
+            knapsackSolution.append(i-1)
+            w -= weights[i-1]
+
+    knapsackSolution.reverse()
+    return knapsackSolution
+```
+
+In this procedure, `M` is the table obtained from the dynamic programming procedure, `weights` is an array containing the weights of the items, `values` is an array containing the values of the items, and `capacity` is the maximum weight capacity of the knapsack.
+
+The procedure iterates from the last row of the table `M` and, based on the values in `M`, determines whether an item is included in the knapsack solution or not. If the value in `M` at position `(i, w)` is not equal to the value in `M` at position `(i-1, w)`, it means that the item with index `i-1` is included in the knapsack solution. We add `i-1` to the `knapsackSolution` list and subtract the weight of the item from the current weight `w`.
+
+Finally, we reverse the `knapsackSolution` list to restore the original order of the items and return it as the computed solution.
+
+This procedure retrieves the set of items that maximize the weight for the given knapsack problem, based on the table `M` and the corresponding weights and values.
+
+
+
+
+
+
