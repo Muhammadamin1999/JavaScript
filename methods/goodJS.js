@@ -184,3 +184,11 @@
 
 //stringfy() string data ni JSON qiladi
  
+let obj = {
+    a: "hello world",
+    b: 4
+}
+let b= 'a'
+console.log(obj[b]) 
+console.log(obj['b']) 
+console.log(obj.b)

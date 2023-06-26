@@ -81,16 +81,29 @@
 // })
 // console.log(maxElem)
   
-function longestWord(sen){
-    const wordArr = sen.toLowerCase().match(/[a-z0-9]+/g)
-    const sorted = wordArr.sort((a,b)=> b.length - a.length)
-    const longestWordArr = sorted.filter((word)=>word.length === sorted[0].length)
-    if(longestWordArr.length === 1){
-        return longestWordArr[0]
-    }else{
-        return longestWordArr
-    }
-}
-let sen = 'hello micha how are you doing'
-const ans = longestWord(sen)
-console.log(ans)
+// function longestWord(sen){
+//     const wordArr = sen.toLowerCase().match(/[a-z0-9]+/g)
+//     const sorted = wordArr.sort((a,b)=> b.length - a.length)
+//     const longestWordArr = sorted.filter((word)=>word.length === sorted[0].length)
+//     if(longestWordArr.length === 1){
+//         return longestWordArr[0]
+//     }else{
+//         return longestWordArr
+//     }
+// }
+// let sen = 'hello micha how are you doing'
+// const ans = longestWord(sen)
+// console.log(ans)
+// let arr=[1,2,3,4,5,6,7,8,9,10]
+//  function chunkArr(arr,n){ 
+//     let arr2 = []
+//   for(let i=0; i<= arr.length; i++){
+//       arr2.push(arr.splice(i,n))   
+//   }
+//   return arr2
+// }
+// const ans = chunkArr(arr,3)
+//  console.log(ans)
+
+
+
