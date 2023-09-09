@@ -6,8 +6,8 @@
 //       super();
 //     }
 //   }
-// console.log([] == 0) // true beradi hammasi lkn === da false
-// console.log([] == '')
+ //console.log([] == 0) // true beradi hammasi lkn === da false
+ //console.log([] == '')
 // console.log([''] == '')
 // console.log([0] == 0)
 // console.log([''] == 0)
@@ -28,7 +28,7 @@
 // console.log(f)
 
 // let obj = {a:1}
-// let arr = ["arr"]
+// let arr = ["a"]
 // console.log(obj[arr])
 
 // let arr = [2,32,22,3]
@@ -60,5 +60,5 @@
 // let greeting = 'hello'
 // greeting[5]='!'
 // console.log(greeting)
-console.log('1011' > '11')
+//console.log('1011' > '11')
 
