@@ -1,47 +1,47 @@
-//challange 1
-function createFunction(){
-    return function(){console.log("hello")};
+// //challange 1
+// function createFunction(){
+//     return function(){console.log("hello")};
     
-}
+// }
 
-const function1 = createFunction();
-function1();
+// const function1 = createFunction();
+// function1();
 
-// challange 2
+// // challange 2
 
-function createFunctionPointer(input){
-    return function(){
-        console.log(input);
-    }
-}
-const printSample = createFunctionPointer('sample');
-printSample();
-const printHello = createFunctionPointer('hello');
-printHello();
+// function createFunctionPointer(input){
+//     return function(){
+//         console.log(input);
+//     }
+// }
+// const printSample = createFunctionPointer('sample');
+// printSample();
+// const printHello = createFunctionPointer('hello');
+// printHello();
 
-// challange 3
+// // challange 3
 
-function outer() {
-    let counter = 0; // this variable is outside incrementCounter's scope
-    function incrementCounter () {
-      counter ++;
-      console.log('counter', counter);
-    }
-    return incrementCounter;
-  }
+// function outer() {
+//     let counter = 0; // this variable is outside incrementCounter's scope
+//     function incrementCounter () {
+//       counter ++;
+//       console.log('counter', counter);
+//     }
+//     return incrementCounter;
+//   }
   
-  const willCounter = outer();
-  const jasCounter = outer();
+//   const willCounter = outer();
+//   const jasCounter = outer();
 
   // Uncomment each of these lines one by one.
 // Before your do, guess what will be logged from each function call.
 
 // /*** Uncomment these to check your work! ***/
-willCounter();
-willCounter();
-willCounter();
-jasCounter();
-willCounter();
+// willCounter();
+// willCounter();
+// willCounter();
+// jasCounter();
+// willCounter();
 
 function addByX(x) {
    let initial = x;
@@ -54,14 +54,36 @@ function addByX(x) {
 
 // /*** Uncomment these to check your work! ***/
 const addByTwo = addByX(2);
-addByTwo(1); // => should return 3
-addByTwo(2); // => should return 4
-addByTwo(3); // => should return 5
+// addByTwo(1); // => should return 3
+// addByTwo(2); // => should return 4
+// addByTwo(3); // => should return 5
 
-const addByThree = addByX(3);
-addByThree(1); // => should return 4
-addByThree(2); // => should return 5
+// const addByThree = addByX(3);
+// addByThree(1); // => should return 4
+// addByThree(2); // => should return 5
 
-const addByFour = addByX(4);
-addByFour(4); // => should return 8
-addByFour(5); // => should return 9
+// const addByFour = addByX(4);
+// addByFour(4); // => should return 8
+// addByFour(5); // => should return 9
+
+
+// CHALLENGE 4
+function once(func) {
+    let output;
+    function callOnce(x){
+        if(output>0){
+            return output;
+        }else{
+        output = func(x);
+        return output;
+        }
+    }
+    return callOnce;
+  
+}
+
+// /*** Uncomment these to check your work! ***/
+const onceFunc = once(addByTwo);
+console.log(onceFunc(4));  // => should log 6
+console.log(onceFunc(10));  // => should log 6
+console.log(onceFunc(9001));  // => should log 6
