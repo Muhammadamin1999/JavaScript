@@ -17,3 +17,7 @@ const personStore = {
     }
 }
 personStore.greet();
+
+// challange 3
+
+
