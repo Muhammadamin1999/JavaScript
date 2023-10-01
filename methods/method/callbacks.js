@@ -20,3 +20,4 @@ function fetchData() {
       console.error(error);
     });
 
+// fetch is used to get data
