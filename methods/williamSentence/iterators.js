@@ -94,3 +94,84 @@ function indexIterator(arr){
 }
 
 
+// CHALLENGE 6
+
+function Words(string) {
+    this.str = string;
+  }
+  
+  Words.prototype[Symbol.iterator] = function() {
+    // YOUR CODE HERE
+    let index = 0;
+    let strSplit = this.str.split(/\s/);
+    return {
+      next: function(){
+        if(index < strSplit.length){
+          const value = strSplit[index];
+          index++;
+          return {value: value, done: false }
+        }else{
+          return {done: true}
+        }
+      }
+    }
+  }
+  
+  // Uncomment the lines below to test your work
+  const helloWorld = new Words('Hello World');
+  for (let word of helloWorld) { console.log(word); } // -> should log 'Hello' and 'World'
+  
+  // CHALLENGE 7
+  
+  function valueAndPrevIndex(array){
+        let index = 0;
+       return {
+         sentence: function(){
+                 index++;
+        let indexName = index;
+        if (index - 1 === 0) {
+          indexName = "first";
+        }
+         return(`${array[index]} was found after index ${indexName}`)
+           
+       }
+       }
+  }
+  
+  const returnedSentence = valueAndPrevIndex([4,5,6])
+  console.log(returnedSentence.sentence());
+  console.log(returnedSentence.sentence());
+  console.log(returnedSentence.sentence());
+  
+  
+  //CHALLENGE 8
+  
+  function* createConversation(string) {
+  
+    yield setInterval(()=>{
+      if(string === "english"){console.log('hello there')}else{
+        console.log('gibberish');
+      }
+    },3000)
+  
+  }
+  
+  console.log(createConversation('english').next());
+  
+  
+  
+  //CHALLENGE 9
+  function waitForVerb(noun) {
+     return new Promise((resolve)=>{
+       setTimeOut(()=>{
+         resolve(noun)
+       },3000)
+     })
+  }
+  
+  async function f(noun) {
+    const result = await waitForVerb('good');
+    console.log(result + noun);
+  }
+  
+  f("dog");
