@@ -194,3 +194,48 @@ function sayHowdy() {
      console.log("goodbye")
    }, 2000)
  }
+
+/* CHALLENGE 9 */
+
+class SecondClock {
+   constructor(cb) {
+     this.cb = cb
+     this.seconds = 0;
+   }
+   start() {
+     this.id = setInterval( () => {
+       this.cb(++this.seconds % 60)
+     }, 1000)
+   }
+   
+   reset() {
+     this.seconds = 0
+     clearInterval(this.id)
+   }
+ }
+ 
+ // UNCOMMENT THESE TO TEST YOUR WORK!
+ /*
+ const clock = new SecondClock((val) => { console.log(val) });
+ console.log("Started Clock.");
+ clock.start();
+ setTimeout(() => {
+    clock.reset();
+   console.log("Stopped Clock after 6 seconds.");
+ }, 6000);
+ */
+ /* CHALLENGE 10 */
+ 
+ function debounce(callback, interval) {
+   let duration = 0
+   let id
+   return function(){
+     if(duration <= 0) {
+       duration = interval
+       clearInterval(id)
+        id = setInterval(() => {duration -= 100}, 100)
+       return callback()
+     }
+   }
+ }
+ 
