@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="title">Document fragment</h2>
+    <ul id="myList">
+
+    </ul>
+    <script>
+        const myList = document.getElementById('myList');
+        const docFrag = document.createDocumentFragment();
+
+        let item1 = document.createElement('li');
+        let item2 = document.createElement('li');
+
+        item1.textContent = 'Apples';
+        item2.textContent = 'Bananas';
+
+        docFrag.appendChild(item1);
+        docFrag.appendChild(item2);
+
+        myList.appendChild(docFrag)
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="title">Dataset - dcode</h2>
+    <div id="myDiv" data-name="domenic" data-started-coding-at = "15">
+        sample text
+    </div>
+
+    <script>
+        const myDiv = document.getElementById('myDiv');
+        myDiv.dataset.name = 'Bob';
+        myDiv.dataset.startedCodingAt = 8;
+        myDiv.dataset.name = '';
+        myDiv.removeAttribute('date-name');
+        
+    </script>
+</body>
+</html>

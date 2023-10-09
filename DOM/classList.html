@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style media="screen">
+        .bold{font-weight: bold;}
+        .red-bg{
+            background: red;
+        }
+        .white-text{color: white};
+        .big-font{
+            font-size: 30px;
+        }
+</style>
+<body>
+ 
+    <h2 id="title"> Class List - dcode </h2>
+    <p id="myPara">
+        Yeah mate
+    </p>
+    <script>
+        const myPara = document.getElementById('myPara');
+        myPara.classList.add('bold','big-font');
+        myPara.classList.remove('bold');
+        myPara.classList.replace('big-font', 'red-bg');
+        myPara.classList.toggle('red-bg');
+        myPara.classList.toggle('red-bg');
+        
+
+    </script>
+</body>
+</html>
