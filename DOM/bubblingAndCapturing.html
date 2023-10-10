@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="title">Bubbling</h2>
+    <p>Lorem <strong id="child">ipsum</strong> dolor sit amet consectetur, adipisicing elit. Atque neque hic dolo
+       rem laborum fugiat ducimus necessitatibus ipsam obcaecati ratione repudiandae.</p>
+    <script>
+    const parent = document.getElementById("parent");
+    const child = document.getElementById("child");
+    parent.addEventListener("click", function(){
+        console.log("i am parent")
+    })
+    child.addEventListener("click", function(){
+        console.log("i am parent")
+    })
+    </script>
+    </body>
+</html>
