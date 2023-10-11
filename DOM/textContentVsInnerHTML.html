@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>textContent vs innerHTML - JS DOM - dcode</h1>
+    <div id="my-div"></div>
+    <script>
+        const myDiv = document.getElementById('my-div');
+        //myDiv.textContent = 'Hey my name is <strong>Dom<strong>'; // result Hey my name is <strong>Dom<strong>
+            myDiv.innerHTML = 'Hey my name is <strong>Dom<strong>';  // Hey my name is Dom
+    </script>
+</body>
+</html>

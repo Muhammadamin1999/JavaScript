@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #area{
+        background-color: black;
+        color: white;
+        padding: 25px;
+
+    }
+    #box {
+        padding: 25px;
+        background-color: red;
+
+    }
+</style>
+<body>
+    <h1>insert element</h1>
+    <div id="area">
+        <h2>put smth</h2>
+    </div>
+    <script>
+        const area = document.getElementById("area");
+        const box = document.createElement("div");
+        box.id = 'box';
+        area.insertAdjacentElement("beforebegin", box)
+    </script>
+</body>
+</html>
