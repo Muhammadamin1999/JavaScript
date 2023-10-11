@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quisquam tempore sed, 
+        eius iste officiis. Tenetur atque assumenda minus iste?</p>
+    <ul id="myList">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Tomato</li>
+    </ul>
+    <script>
+        const myList = document.getElementById("myList");
+        myList.addEventListener('click', function(e){
+            const target = e.target;
+            if(target.matches('li')){
+                target.style.background = "red";
+            }
+        })
+        const newLi = document.createElement("li");
+        newLi.textContent = "decode"
+        myList.appendChild(newLi)
+    </script>
+</body>
+</html>
