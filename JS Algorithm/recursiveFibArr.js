@@ -39,3 +39,10 @@ const fibonacciRecPos = (pos)=>{
 }
 
 console.log(fibonacciRecPos(8));
+
+// another
+
+const fibPos = pos => pos < 2 ? pos : fibPos(pos-1) + fibPos(pos-2);
+
+console.log(fibPos(8));
+
