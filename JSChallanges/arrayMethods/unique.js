@@ -1,8 +1,6 @@
 const arr = [1,2,3,4,5,3,2];
 
-const result = arr.filter(function(v){
-    return arr.indexOf(v) === arr.lastIndexOf(v);
-})
+const result = arr.filter(el => arr.indexOf(el) === arr.lastIndexOf(el))
 // 0 === 0 ok
 // 1 === 1 ok but 1 === 6 no
 // 2 === 2 ok but 2 === 5 no
