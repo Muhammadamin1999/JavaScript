@@ -11,7 +11,6 @@
 const isEquesl100 = (a,b)=> a === 100 || b === 100 || a+b === 100;
 console.log(isEquesl100(30,70))
 
-
 /// exercise 2
 // write a function to get the extension of the file
 
@@ -27,7 +26,6 @@ console.log(moveCharsForward('abc'));
 
 // exercise 4 
 // get a common date
-
 
 const formatDate = (todayDate = new Date())=>{
     const days = todayDate.getDay() +1;
